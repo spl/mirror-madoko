@@ -1,17 +1,12 @@
 language: generic
 
 env:
-  - SRC='hg::https://hg.codeplex.com/koka'   DIR=koka   DST=https://spl-deploy:$GITHUB_TOKEN@github.com/spl/koka.git
-  - SRC='hg::https://hg.codeplex.com/madoko' DIR=madoko DST=https://spl-deploy:$GITHUB_TOKEN@github.com/spl/madoko.git
+- TYPE='hg' SRC='hg::https://hg.codeplex.com/koka'   DIR='koka'   DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/koka.git"
+- TYPE='hg' SRC='hg::https://hg.codeplex.com/madoko' DIR='madoko' DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/madoko.git"
 
 install:
-  - wget https://raw.github.com/felipec/git-remote-hg/master/git-remote-hg -O ./git-remote-hg
-  - chmod u+x ./git-remote-hg
-  - export PATH=$PWD:$PATH
+- export PATH=$PWD:$PATH
+- sh install-$TYPE.sh
 
 script:
-  - git clone --mirror $SRC $DIR
-  - git gc --aggressive
-  - cd $DIR
-  - git remote add mirror $DST
-  - git push --mirror mirror
+- sh script-$TYPE.sh
