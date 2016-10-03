@@ -38,6 +38,6 @@ The following projects are currently being mirrored:
   side-effecting computations
 
 * [**Madoko**](https://www.madoko.net/)
-  ([source](https://madoko.codeplex.com/)
+  ([source](https://madoko.codeplex.com/),
   [mirror](https://github.com/spl/madoko)):
   a fast JavaScript Markdown processor written in Koka
