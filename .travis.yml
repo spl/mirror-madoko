@@ -9,6 +9,7 @@ env:
 - TYPE='hg'  SRC='hg::https://hg.codeplex.com/koka'                    DIR='koka'   DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/koka.git"
 - TYPE='hg'  SRC='hg::https://hg.codeplex.com/madoko'                  DIR='madoko' DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/madoko.git"
 - TYPE='svn' SRC='https://svn.science.uu.nl/repos/sci.hage0101.helium' DIR='helium' DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/helium.git"
+- TYPE='svn' SRC='https://svn.science.uu.nl/repos/sci.hage0101.lvm'    DIR='lvm'    DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/lvm.git"
 
 install:
 - export PATH=$PWD:$PATH
