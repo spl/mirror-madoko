@@ -13,6 +13,10 @@ env:
 - TYPE='svn' SRC='https://svn.science.uu.nl/repos/sci.hage0101.Top'    DIR='top'    DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/top.git"
 - TYPE='svn' SRC='https://svn.science.uu.nl/repos/sci.hage0101.hint'   DIR='hint'   DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/hint.git"
 
+before_install:
+# Error if $GITHUB_TOKEN is null.
+- bash -c '[ -n "$GITHUB_TOKEN" ]'
+
 install:
 - export PATH=$PWD:$PATH
 - bash -x install-$TYPE.sh
