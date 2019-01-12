@@ -6,6 +6,7 @@ addons:
     - git-svn
 
 env:
+- TYPE='svn' SRC='http://svn.resourcespace.com/svn/rs/' DIR='resourcespace' DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/resourcespace.git"
 
 before_install:
 # Error if $GITHUB_TOKEN is null.
