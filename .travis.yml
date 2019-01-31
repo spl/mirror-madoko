@@ -6,7 +6,6 @@ addons:
     - git-svn
 
 env:
-- TYPE='svn' SRC='http://svn.resourcespace.com/svn/rs/' DST="https://spl-deploy:$GITHUB_TOKEN@github.com/spl/resourcespace.git" SVN2GIT_FLAGS='--tags releases'
 
 before_install:
 # Error if $GITHUB_TOKEN is null.
